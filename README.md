@@ -6,7 +6,6 @@ class Ticket:
         self.kind = kind
         self.cost = cost
 
-
 class Attendants:
     def __init__(self, name, type_ticket, seat_numbers, age):
         self.type_t = type_ticket
@@ -24,7 +23,6 @@ def proper_entrance(self, group):
             self.seats.append(seats)
     else:
         print("Max Capacity")
-
 
 class Entertainment:
     def __init__(self, attraction, max_seating):
@@ -61,7 +59,6 @@ class Entertainment:
             seats_taken.append(seats)
         print(seats_taken)
 
-
 class Carnival(Entertainment):
     def profit(self):
         profit = 0
@@ -81,7 +78,6 @@ class Carnival(Entertainment):
             print("please do not pet the lions")
         else:
             pass
-
 
 class MovieTheater(Entertainment):
     def __init__(self, attraction, max_seating, rating):
@@ -112,7 +108,6 @@ class MovieTheater(Entertainment):
                 print("Do not admit")
             else:
                 proper_entrance(self, group)
-
 
 family_pass = Ticket(4, 20.00)
 couples_pass = Ticket(2, 12.00)
