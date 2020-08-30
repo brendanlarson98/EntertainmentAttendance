@@ -1,7 +1,8 @@
 # EntertainmentAttendance
-# A simple program which allows attendance and ticket data to be collected for different entertainment formats.
+## A simple program which allows attendance and ticket data to be collected for different entertainment formats.
 
-# create the ticket and attendants class
+### create the ticket and attendants class
+'''
 class Ticket:
     def __init__(self, kind, cost):
         self.kind = kind
@@ -14,8 +15,9 @@ class Attendants:
         self.seat_num = seat_numbers
         self.name = name
         self.age = age
-
-# here we check to see if any attraction is at max capacity, this is used in a later function
+'''
+### here we check to see if any attraction is at max capacity, this is used in a later function
+'''
 def proper_entrance(self, group):
     if len(self.attendants) + len(group.name) < self.max_seating:
         for people in group.name:
@@ -25,8 +27,9 @@ def proper_entrance(self, group):
             self.seats.append(seats)
     else:
         print("Max Capacity")
-
-# we create our parent class, entertainment, which contacts functions to add an attendant, give the number of attendants in an attraction, declare revenue from tickets, and list which seats have been taken. Lists under Entertainment are used in functions.
+'''
+### we create our parent class, entertainment, which contacts functions to add an attendant, give the number of attendants in an attraction, declare revenue from tickets, and list which seats have been taken. Lists under Entertainment are used in functions.
+'''
 class Entertainment:
     def __init__(self, attraction, max_seating):
         self.att = attraction
@@ -75,16 +78,18 @@ class Carnival(Entertainment):
                 profit += ticket.cost - 4
         print(profit)
         return profit
-
-# small safety warning for anyone who doesn't know not to pet lions. Can be editted to fit any "R" rated movies.
+'''
+### small safety warning for anyone who doesn't know not to pet lions. Can be editted to fit any "R" rated movie warnings.
+'''
     @staticmethod
     def safety_warning(item):
         if item == lions:
             print("please do not pet the lions")
         else:
             pass
-
-# Here we append an attribute, as movies need ratings.
+'''
+### Here we append an attribute, as movies need ratings.
+'''
 class MovieTheater(Entertainment):
     def __init__(self, attraction, max_seating, rating):
         Entertainment.__init__(self, attraction, max_seating)
@@ -101,8 +106,9 @@ class MovieTheater(Entertainment):
                 profit += ticket.cost - 8
         print(profit)
         return profit
-
-# Our add attendants needed some shaping as not everyone can see every movie. Our attendants have a list of ages per group, and our rating is based off of those ages.
+'''
+#### Our add attendants needed some shaping as not everyone can see every movie. Our attendants have a list of ages per group, and our rating is based off of those ages.
+'''
     def add_attend(self, group):
         if self.rating.lower() == "r":
             if max(group.age) < 18:
@@ -115,8 +121,9 @@ class MovieTheater(Entertainment):
                 print("Do not admit")
             else:
                 proper_entrance(self, group)
-
-# Sample inputs
+'''
+#### Sample inputs
+'''
 family_pass = Ticket(4, 20.00)
 couples_pass = Ticket(2, 12.00)
 single_pass = Ticket(1, 7.00)
@@ -128,3 +135,5 @@ movie_group = Ticket(4, 18)
 a1 = Attendants(["jessie", 'james', 'juan', 'kelly'], family_pass, [11, 12, 13, 14], [20, 21, 20, 19])
 a2 = Attendants(["mark", 'sam'], couples_pass, [3, 4], [16, 15])
 a3 = Attendants("maria", single_pass, [6], 50)
+'''
+
